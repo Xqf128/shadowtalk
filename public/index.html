@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Tulips Style Chat</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- HEADER -->
+  <div class="header">
+    <div class="logo">🌷 Tulips Chat</div>
+    <div class="status">Online</div>
+  </div>
+
+  <!-- CHAT AREA -->
+  <div class="chat-container" id="chat"></div>
+
+  <!-- INPUT AREA -->
+  <div class="input-area">
+    <input id="messageInput" type="text" placeholder="Type your message..." />
+    <button id="sendBtn">➤</button>
+  </div>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
