@@ -10,22 +10,17 @@ input.addEventListener("keypress", e => {
 });
 
 function sendMessage() {
-  if (input.value.trim() === "") return;
-  socket.emit("message", input.value);
+  const msg = input.value.trim();
+  if (!msg) return;
+  socket.emit("chat message", msg);
   input.value = "";
 }
 
-socket.on("message", data => {
-  const msg = document.createElement("div");
-  msg.classList.add("message");
-
-  if (data.self) {
-    msg.classList.add("self");
-  } else {
-    msg.classList.add("other");
-  }
-
-  msg.innerText = data.text;
-  chat.appendChild(msg);
+socket.on("chat message", data => {
+  const div = document.createElement("div");
+  div.classList.add("message");
+  div.classList.add(data.self ? "self" : "other");
+  div.innerText = data.text;
+  chat.appendChild(div);
   chat.scrollTop = chat.scrollHeight;
 });
