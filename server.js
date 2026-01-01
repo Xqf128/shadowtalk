@@ -7,6 +7,8 @@ const io = require("socket.io")(http);
 const users = {};
 
 // serve public folder
+const path = require("path");
+
 app.use(express.static(path.join(__dirname, "public")));
 
 // homepage
